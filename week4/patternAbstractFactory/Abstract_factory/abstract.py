@@ -4,12 +4,12 @@ import random
 class AbstractLevel:
 
     @classmethod
-    def get_map(cls):
-        pass
+    def get_map(Class):
+        return Class.Map()
 
     @classmethod
-    def get_objects(cls):
-        pass
+    def get_objects(Class):
+        return Class.Objects()
 
 
 class EasyLevel(AbstractLevel):

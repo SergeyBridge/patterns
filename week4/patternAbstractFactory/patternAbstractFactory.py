@@ -1,19 +1,19 @@
 import random
 
 
-class Factory:
+class AbstractLevel:
 
     @classmethod
-    def get_map(cls):
-        pass
+    def get_map(Class):
+        return Class.Map()
 
     @classmethod
-    def get_objects(cls):
-        pass
+    def get_objects(Class):
+        return Class.Objects()
 
 
-class EasyFactory:
-    class EasyMap:
+class EasyLevel(AbstractLevel):
+    class Map:
 
         def __init__(self):
             self._map = [[0 for j in range(5)] for i in range(5)]
@@ -29,7 +29,7 @@ class EasyFactory:
         def get_map(self):
             return self._map
 
-    class EasyObjects:
+    class Objects:
 
         def __init__(self):
             # размещаем переход на след. уровень
@@ -53,8 +53,8 @@ class EasyFactory:
             return self.objects
 
 
-class MediumFactory:
-    class MediumMap:
+class MediumLevel(AbstractLevel):
+    class Map:
 
         def __init__(self):
             self._map = [[0 for j in range(8)] for i in range(8)]
@@ -70,7 +70,7 @@ class MediumFactory:
         def get_map(self):
             return self._map
 
-    class MediumObjects:
+    class Objects:
 
         def __init__(self):
             # размещаем переход на след. уровень
@@ -94,8 +94,8 @@ class MediumFactory:
             return self.objects
 
 
-class HardFactory:
-    class HardMap:
+class HardLevel(AbstractLevel):
+    class Map:
 
         def __init__(self):
             self._map = [[0 for j in range(10)] for i in range(10)]
@@ -111,7 +111,7 @@ class HardFactory:
         def get_map(self):
             return self._map
 
-    class HardObjects:
+    class Objects:
 
         def __init__(self):
             # размещаем переход на след. уровень
